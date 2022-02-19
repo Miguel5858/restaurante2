@@ -37,10 +37,13 @@ const OrdenDelDia = ({ orden }) => {
     return ( 
         <div className="sm:w-1/2 lg:w-1/3 px-2 mb-4">
             <div className="p-3 shadow-md bg-white rounded" >
-                <h1 className="text-yellow-600 text-lg font-bold"> {orden.id} </h1>
+                {/* <h1 className="text-yellow-600 text-lg font-bold"> {orden.id} </h1> */}
+                <h1 className="text-blue-700 font-bold">MESA N°: {orden.mesa}</h1> 
                 {orden.orden.map( platillos => (
                     <p className="text-gray-600"> {platillos.cantidad} {platillos.nombre} </p>
-                ) )}
+                    ) )}
+
+                     <p className="text-gray-600 ">Detalle: {orden.observacion}</p>
 
                 <p className="text-green-600 font-bold">Total a Pagar: $ {orden.total}</p>
 
@@ -85,7 +88,11 @@ const OrdenDelDia = ({ orden }) => {
                        Marcar como lista
                    </button>
                 ) }
+
+                
             </div>
+
+            
         </div>
      );
 }
